@@ -1,0 +1,72 @@
+<!DOCTYPE html>  
+<html>
+  <meta charset="UTF-8">
+  <title>Robet</title>
+  </head>
+  <body>  
+    <script src="socket.io.js"></script>
+    <script type="text/javascript" src="FishMatchUser.js"></script>
+    <script type="text/javascript" src="FishUser.js"></script>
+    <script type="text/javascript" src="game28User.js"></script>
+    <script type="text/javascript" src="redbagUser.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="jia82User.js"></script>
+    <script type="text/javascript" src="cowUser.js"></script>
+    <script>
+    var main = GameInfo.getInstand;
+
+    function go(){
+        var info = {};
+        info.FishRobot = parseInt(document.getElementById("FishRobot").value);
+        info.FishMatchRobotMin = parseInt(document.getElementById("FishMatchRobotMin").value);
+        info.FishMatchRobotMax = parseInt(document.getElementById("FishMatchRobotMax").value);
+        info.game28RobotMin = parseInt(document.getElementById("game28RobotMin").value);
+        info.game28RobotMax = parseInt(document.getElementById("game28RobotMax").value);
+        info.redbagRobotMin = parseInt(document.getElementById("redbagRobotMin").value);
+        info.redbagRobotMax = parseInt(document.getElementById("redbagRobotMax").value);
+        info.jia82RobotMin = parseInt(document.getElementById("jia82RobotMin").value);
+        info.jia82RobotMax = parseInt(document.getElementById("jia82RobotMax").value);
+        info.cowRobotMin = parseInt(document.getElementById("cowRobotMin").value);
+        info.cowRobotMax = parseInt(document.getElementById("cowRobotMax").value);
+        main.timetest(info);
+    }
+
+    </script>
+    
+
+    <h3>普通房间设置</h3>
+    普通 max(默认20)<input type="text" id="FishRobot" value=15 size="1"/>
+    <br>
+    <br>
+    <h3>比赛房间设置</h3>
+    比赛min(默认10)<input type="text" id="FishMatchRobotMin" value=0 size="1"/>
+    <br>
+    比赛max(默认20)<input type="text" id="FishMatchRobotMax" value=0 size="1"/>
+    <br>
+
+    <br>
+    <h3>28游戏设置</h3>
+    28游戏min(默认8)<input type="text" id="game28RobotMin" value=8 size="1"/>
+    28游戏max(默认15)<input type="text" id="game28RobotMax" value=15 size="1"/>
+    <br>
+
+    <br>
+    <h3>红包游戏设置</h3>
+    红包游戏min(默认14)<input type="text" id="redbagRobotMin" value=14 size="1"/>
+    红包游戏max(默认15)<input type="text" id="redbagRobotMax" value=15 size="1"/>
+    <br>
+
+    <br>
+    <h3>八加二游戏设置</h3>
+    游戏min(默认8)<input type="text" id="jia82RobotMin" value=8 size="1"/>
+    游戏max(默认15)<input type="text" id="jia82RobotMax" value=15 size="1"/>
+    <br>
+
+    <br>
+    <h3>牛牛s游戏设置</h3>
+    游戏min(默认8)<input type="text" id="cowRobotMin" value=8 size="1"/>
+    游戏max(默认15)<input type="text" id="cowRobotMax" value=15 size="1"/>
+    <br>
+    <input type="button" onclick="go()" value="进入房间" />
+  </body>
+</html> 

@@ -1,0 +1,18 @@
+{
+  "name": "king",
+  "version": "1.0.0",
+  "description": "cook",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "158"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.5.0",
+    "colors": "^1.1.2"
+  }
+}

@@ -1,0 +1,597 @@
+<!DOCTYPE html>  
+<html>
+  <meta charset="UTF-8">
+  <title>Robet</title>
+  </head>
+  <body>  
+    <script src="socket.io.js"></script>   
+    <script>
+    // for (var i = 1;i<= 1;i++)
+    // {
+      
+    // 当服务端发送一条消息到客户端，message 事件即被触发。我们把消息在控制台打印出来   
+    //接收连接服务器信息
+    var freeCount5 = 0;
+    var freeCount8 = 0;
+    var freeCount15 = 0;
+    var Total = 0;
+    var lotteryTotal = 0;
+    var socket;
+    var hitfishCount = 0;
+    var hitfishTotal = 0;
+    //socket = io.connect('http://192.168.1.170:3000');
+    //socket = io.connect('http://bosengame.com:3000');
+    //socket = io.connect('http://120.76.200.182:3000');
+    socket = io.connect('http://localhost:3000');
+    //socket = io.connect('http://120.76.240.16:3000');
+    // socket2.on('connected',function(msg){
+    //   console.log(msg);
+    // })
+    // 
+    // 
+   function login(){
+        //发送登录帐号密码
+        socket.emit('login',{userName:'robot1',sign:'cocogame2016`@33922200@@@@',gameId:1})
+        //socket.emit('login',{userName:'abc111',sign:'235a189a223c898adaf1c27d18456e12',gameId:1});
+        //socket.emit('login',{userName:'test',sign:'537b38da793b945fefb4d9a806bcd13b',gameId:1})
+        //socket.emit('login',{phoneNo:'15999952250',password:'abc123',gameId:1})
+        //socket.emit('login',{userName:'abc123',sign:'f5c90223d95cfc4481ada43595b811d4',gameId:3})
+        //socket.emit('login',{userName:'robot0',sign:'cocogame2016`@33922200@@@@',gameId:1})
+        //socket.emit('login',{userName:'oo9Dqs1N4q_y4KC1obS3lvMosCvY',sign:'ce47ba43d56bef8b39c4fcc55678070a',gameId:1})
+     }
+
+    socket.on('connected',function(msg){
+        console.log(msg);
+    })
+
+    var sign = "";
+    var userid = "";
+    var bulletid = 1;
+
+    //接收登录结果
+    socket.on('loginResult',function(result){
+        console.log(result)
+        sign = result.Obj.sign;
+        userid = result.Obj.id;
+        document.getElementById("score").value = result.Obj.score
+        document.getElementById("freeCount").value = result.Obj.freeCount
+        logingame();
+    })
+
+    socket.on('exchangeResult',function(msg){
+        console.log(msg);
+    })
+
+    socket.on('dongshanzaiqi',function(msg){
+        console.log(msg);
+    })
+
+    socket.on('dayListResult',function(msg){
+        console.log(msg);
+    })
+
+
+    socket.on('sendCoinResult',function(msg){
+        console.log(msg);
+    })
+
+    socket.on('sendbindPhoneNoResult',function(msg){
+        console.log(msg);
+    })
+
+    socket.on('bindPhoneResult',function(msg){
+        console.log(msg);
+    })
+
+    socket.on('addgold',function(msg){
+        console.log(msg);
+    })
+
+    socket.on('prizeListResult',function(msg){
+    console.log(msg);
+    })
+
+    socket.on('getPrizeResult',function(msg){
+    console.log(msg);
+    })
+
+    socket.on('getDayPrizeResult',function(msg){
+    console.log(msg);
+    })
+
+    socket.on('addPrize',function(msg){
+    console.log(msg);
+    })
+
+    socket.on('getServerRankResult',function(msg){
+    console.log(msg);
+    })
+    
+    socket.on('applyMatchResult',function(msg){
+    console.log(msg);
+    })
+
+
+    socket.on('fishUseCoin',function(msg){
+    console.log(msg);
+    })
+
+    socket.on('sendMsg',function(msg){
+    console.log(msg);
+    })
+    
+    socket.on('sendMsgResult',function(msg){
+    console.log(msg);
+    })
+
+    socket.on('firstExchagerResult',function(msg){
+    console.log(msg);
+    })
+
+    socket.on('lv',function(msg){
+        console.log(msg);
+    })
+
+    socket.on('lineOutMsg',function(msg){
+        console.log(msg);
+    })
+
+    socket.on('maintain',function(msg){
+        console.log(msg);
+    })
+
+    socket.on('checkNickNameResult',function(msg){
+        console.log(msg);
+    })
+
+    socket.on('rechargeResult',function(msg){
+        console.log(msg);
+    })
+    
+    
+    
+    var nowfishId;
+    var socket2;
+    var initSocket = function(){
+      socket2.on('connected',function(msg){
+        console.log(msg);
+      })
+
+      socket2.on('loginGameResult',function(msg){
+        console.log(msg);
+
+        socket2.emit('LoginRoom',{roomid:1})
+        //结束与登录服务器通信
+        //socket.disconnect();
+      })
+
+      socket2.on('FishOut',function(result){
+        nowfishId = result.fishId;
+        //console.log(result)
+        //console.log(nowfishId)
+      })
+
+    socket2.on('LoginRoomResult',function(msg){
+    console.log(msg);
+    })
+
+    socket2.on('playEnter',function(msg){
+    console.log(msg);
+    })
+
+    socket2.on('PlayerOut',function(msg){
+    console.log(msg);
+    })
+
+    socket2.on('addgoldResult',function(msg){
+    console.log(msg);
+    })
+
+    socket2.on('downEnd',function(msg){
+        console.log(msg);
+        console.log("下注结束");
+    })
+
+    socket2.on('downCoinBegin',function(msg){
+        console.log(msg);
+        console.log("下注开始");
+    })
+
+    socket2.on('match_countdown',function(msg){
+    console.log("match_countdown");
+    })
+
+    socket2.on('matchRank',function(msg){
+    console.log(msg);
+    })
+
+    socket2.on('upResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('downCoinResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('otherDownCoin',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('openResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('winResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('otherUp',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('downResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('otherDown',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('getDownTimeResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('resetBankerCoin',function(msg){
+        console.log(msg);
+    })
+
+    //红包监听
+    socket2.on('noticeRedBag',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('sendRedBagResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('lootRedBagResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('redbagEnd',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('checkRedBagResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('getHistoryResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('getx',function(msg){
+        console.log(msg);
+        console.log(msg.data.jieguo);
+    })
+
+    socket2.on('sendCard',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('lotteryResult',function(msg){
+        console.log(msg);
+    })
+
+    socket2.on('vsResult',function(msg){
+        console.log(msg);
+    })
+
+
+    }
+
+    function logingame(){
+        if (socket2 && userid){
+            socket2.emit('LoginGame',{userid:userid,gametype:1,sign:sign})
+        }
+     }
+
+    var ip = [];
+    var prot = [];
+
+
+    socket.on('ServerListResult',function(msg){
+        console.log(msg);
+        console.log(msg.GameInfo.length);
+        for(var i = 0 ;i < msg.GameInfo.length ; i++){
+            ip[i] = msg.GameInfo[i].serverInfo.normal[0].ip;
+            prot[i] = msg.GameInfo[i].serverInfo.normal[0].prot;
+        }
+
+
+        // ip = msg.GameInfo[2].serverInfo.normal[idx].ip;
+        // port = msg.GameInfo[2].serverInfo.normal[idx].prot;
+        // ip2 = msg.GameInfo[0].serverInfo.normal[idx].ip;
+        // port2 = msg.GameInfo[0].serverInfo.normal[idx].prot;
+        // ip3 = msg.GameInfo[0].serverInfo.match[idx].ip;
+        // port3 = msg.GameInfo[0].serverInfo.match[idx].prot;
+        // ip4 = msg.GameInfo[3].serverInfo.normal[idx].ip;
+        // port4 = msg.GameInfo[3].serverInfo.normal[idx].prot;
+        // ip5 = msg.GameInfo[4].serverInfo.normal[idx].ip;
+        // port5 = msg.GameInfo[4].serverInfo.normal[idx].prot;
+        // ip1 = msg.GameInfo[1].serverInfo.normal[idx].ip;
+        // port1 = msg.GameInfo[1].serverInfo.normal[idx].prot;
+    })
+
+
+
+    function test1(){
+        socket2 = io.connect('http://' + ip[1] + ':' + prot[1])
+        //socket.disconnect();
+        initSocket();
+        logingame();
+        
+    }
+
+    function test(){
+        socket2 = io.connect('http://' + ip + ':' + port)
+        //socket.disconnect();
+        //console.log(msg.GameInfo.serverInfo[idx].prot)
+        initSocket();
+        logingame();
+        
+    }
+
+    function test2(){
+        
+        socket2 = io.connect('http://' + ip2 + ':' + port2)
+        //socket.disconnect();
+        //console.log(msg.GameInfo.serverInfo[idx].prot)
+        initSocket();
+        logingame();
+        
+    }
+
+    function test3(){
+        socket2 = io.connect('http://' + ip3 + ':' + port3)
+        //socket.disconnect();
+        //console.log(msg.GameInfo.serverInfo[idx].prot)
+        initSocket();
+        logingame();
+    }
+
+    function goredbaggame(){
+        socket2 = io.connect('http://' + ip4 + ':' + port4)
+        //socket.disconnect();
+        //console.log(msg.GameInfo.serverInfo[idx].prot)
+        initSocket();
+        logingame();
+    }
+
+    function go8da2(){
+        socket2 = io.connect('http://' + ip[4] + ':' + prot[4])
+        //socket.disconnect();
+        //console.log(msg.GameInfo.serverInfo[idx].prot)
+        initSocket();
+        logingame();
+    }
+
+    function gocow(){
+        socket2 = io.connect('http://' + ip[5] + ':' + prot[5])
+        //socket.disconnect();
+        //console.log(msg.GameInfo.serverInfo[idx].prot)
+        initSocket();
+        logingame();
+    }    
+
+    function ttt(){
+        //logingame();
+    }
+
+
+
+    function shoot(){
+        bulletid++;
+        socket2.emit('fishShoot',{userid:1,bet:1,angle:3.3,bulletId:bulletid})
+        socket2.emit('fishHit',{fishId:nowfishId,bulletId:bulletid})
+     }
+
+     function loginroom(){
+        socket2.emit('LoginRoom',{roomid:1})
+     }
+
+    function hitfish(){
+      var lotteryCount = document.getElementById("lotteryCount").value;
+      var lotterybet = document.getElementById("lotterybet").value;
+      for(var i = 0; i < lotteryCount ; ++i){
+        socket2.emit('fishHit',{fishType:0,bet:lotterybet,fishId:1,bulletId:bulletid});
+        hitfishTotal -= lotterybet;
+      }
+    }
+
+    function logoutroom(){
+        socket2.emit('LogoutRoom');
+     }
+
+
+     function lottery() {
+        var lotteryCount = document.getElementById("lotteryCount").value;
+        var lotterybet = document.getElementById("lotterybet").value;
+        for(var i = 0; i < lotteryCount ; ++i){
+          Total -= lotterybet;
+          socket2.emit('lottery',{bet:lotterybet,lines:1});
+        }
+        
+     }
+
+     function exchange(){
+        socket.emit('exchange',{proCount:20});
+     }
+
+    function sendCoin(){
+        socket.emit('sendCoin',{sendUserId:577,sendCoin:2000});
+    }
+
+    function sendbindPhoneNo(){
+        socket.emit('sendbindPhoneNo',{phoneNo:15999952250});
+    }
+
+    function bindPhone(){
+        var checkNo = document.getElementById("checkNo").value;
+        socket.emit('bindPhone',{phoneNo:15999952250,checkNo:checkNo,password:"abc123"});
+    }
+
+    function getPrize(){
+        socket.emit('getPrize',{id:2});
+    }
+
+    function getDayPrize(){
+        socket.emit('getDayPrize',{id:4885});
+    }
+
+    function getServerRank(){
+        socket.emit('getServerRank',{serverId:4});
+    }
+
+    function recharge(){
+        socket.emit('recharge',{total_fee:1.00,goodsId:1});
+    }
+
+    function apply(){
+        socket.emit('applyMatch',{roomid:11});
+    }
+
+    function sendMsg(){
+        var checkNo = document.getElementById("checkNo").value;
+        socket.emit('sendMsg',{msg:checkNo});
+    }
+
+    function checkNickName(){
+        socket.emit('checkNickName',{userId:1});
+    }
+
+    function up(){
+        socket2.emit('up',{Coin:100000});
+    }
+
+    function down(){
+        socket2.emit('down',{});
+    }
+
+    function downCoin(){
+        var chips = document.getElementById("chips").value;
+        var selectId = parseInt(document.getElementById("selectId").value);
+        socket2.emit('downCoin',{chips:chips,selectId:selectId});
+    }
+
+    function getDownTime(){
+        socket2.emit('getDownTime',{});
+    }
+
+    function sendbag(){
+        socket2.emit('sendRedBag',{boomNum:1,coin:100,count:10});
+    }
+
+    function lootbag(){
+        var lootbagid = parseInt(document.getElementById("lootbagid").value);
+        socket2.emit('lootRedBag',{redBagId:lootbagid});
+    }
+
+    function checkbag(){
+        var lootbagid = parseInt(document.getElementById("lootbagid").value);
+        socket2.emit('checkRedBag',{redBagId:lootbagid});
+    }
+
+    function getHistory(){
+        socket2.emit('getHistory');
+    }
+
+    function getx(){
+        socket2.emit('getx',"coco%2016@s3ls@l3l#22l2l;a;z33123");
+    }
+
+    function setx(){
+        socket2.emit('setx',{code:"coco%2016@s3ls@l3l#22l2l;a;z33123",count:3000});
+    }
+
+    function vs(){
+        var selectId = parseInt(document.getElementById("selectId").value);
+        socket2.emit('vs',{selectId:selectId});
+    }
+
+
+    </script>
+
+    剩余金额:<input type="text" id="score" value=0 />
+    剩余免费次数:<input type="text" id="freeCount" value=0 />
+
+    <br>
+    <input type="button" onclick="login()" value="登录" />
+    <input type="button" onclick="test()" value="进入游戏28" />
+    <input type="button" onclick="test1()" value="进入老虎机" />
+    <input type="button" onclick="test2()" value="进入捕鱼" />
+    <input type="button" onclick="test3()" value="进入捕鱼比赛" />
+    <input type="button" onclick="loginroom()" value="进入房间" />
+    <input type="button" onclick="hitfish()" value="击中鱼" />
+    <input type="button" onclick="shoot()" value="发射" />
+    <input type="button" onclick="apply()" value="报名" />
+    <input type="button" onclick="logoutroom()" value="离开房间" />
+    <input type="button" onclick="exchange()" value="兑换电话卡" />
+    <input type="button" onclick="sendCoin()" value="赠送金币" />
+    <input type="button" onclick="recharge()" value="充值" />
+    <input type="text" id="lotteryCount" value=1 size="3"/>
+    <input type="text" id="lotterybet" value=1 size="3"/>
+    <br>
+        <input type="button" onclick="lottery()" value="摇奖" />
+    <br>
+    <input type="button" onclick="checkNickName()" value="检测ID" />
+    <input type="button" onclick="sendbindPhoneNo()" value="获取验证码" />
+    <input type="button" onclick="bindPhone()" value="绑定" />
+    <input type="text" id="checkNo" size="3"/>
+    <input type="button" onclick="getPrize()" value="领取奖品" />
+    <input type="button" onclick="getDayPrize()" value="领取每日奖品" />
+    <input type="button" onclick="getServerRank()" value="获得游戏排行榜" />
+    <input type="button" onclick="sendMsg()" value="喇叭" />
+    <input type="button" onclick="getDownTime()" value="获取下注时间" />
+    <input type="button" onclick="up()" value="上庄" />
+    <input type="button" onclick="down()" value="下庄" />
+    <input type="button" onclick="downCoin()" value="下注" />
+    <input type="button" onclick="getx()" value="getx" />
+    <input type="button" onclick="setx()" value="setx" />
+    筹码<input type="text" id="chips" value=1 size="3"/>
+    下注门<input type="text" id="selectId" value=1 size="3"/>
+    <br>
+    <input type="button" onclick="goredbaggame()" value="进入红包游戏" />
+    <input type="button" onclick="loginroom()" value="进入游戏房间" />
+    <input type="button" onclick="sendbag()" value="发包" />
+    <input type="button" onclick="lootbag()" value="抢包" />
+    <input type="button" onclick="checkbag()" value="查包" />
+    <input type="button" onclick="getHistory()" value="拿历史记录" />
+    抢包id<input type="text" id="lootbagid" value=1 size="3"/>
+    <br>
+
+    <input type="button" onclick="go8da2()" value="进入八搭二游戏" />
+    <input type="button" onclick="loginroom()" value="进入游戏房间" />
+    <input type="button" onclick="vs()" value="对决" />
+    <input type="button" onclick="gocow()" value="进入牛牛游戏" />
+    <input type="button" onclick="loginroom()" value="进入游戏房间" />
+    <br>
+    <textarea id="lotteryResult" rows="3" cols="40">
+      摇奖结果
+    </textarea>
+
+    <br>
+    <br>
+    奖池:<input type="text" id="score_pool" value=0 />
+
+    <input type="text" id="freeCount5" value=0 size="1"/>
+    <input type="text" id="freeCount8" value=0 size="1"/>
+    <input type="text" id="freeCount15" value=0 size="1"/>
+
+    <br>
+    <br>
+    摇奖次数:<input type="text" id="lotteryTotal" value=0 size="3"/>
+    盈利:<input type="text" id="Total" value=0 size="3"/>
+
+  </body>
+</html> 

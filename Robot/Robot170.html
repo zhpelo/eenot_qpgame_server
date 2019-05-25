@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+<html>  
+  <body>  
+ 	 	11
+    <script src="socket.io.js"></script>   
+    <script>
+    var so = [];
+    for (var i = 0;i<= 1;i++)
+    {
+      so[i] = io.connect('http://192.168.1.170:3000');
+      // 当服务端发送一条消息到客户端，message 事件即被触发。我们把消息在控制台打印出来   
+              //接收连接服务器信息
+        so[i].on('connected',function(msg){
+            console.log(msg);
+        })
+        
+        //发送登录帐号密码
+        so[i].emit('login',{userName:'robot' + i,password:'11111'})
+        
+        //接收登录结果
+        so[i].on('loginResult',function(result){
+            //self.label.string = result.msg;
+        })
+  
+        
+        //接收摇奖结果
+        so[i].on('lotteryResult',function(result){
+            console.log("score:" + result.ResultData.userscore);
+        })
+
+
+		        //发送摇奖设置
+		//         socket.emit('lottery',{bet:1,lines:1});
+     }
+
+    // for(var i = 1 ;i < 8;i++)
+    // {
+    //   so[i].emit('lottery',{bet:9,lines:9});
+    // }
+    // 
+    for(var k = 0;k< 1000000;k++)
+    {
+
+    }
+    
+    function showTime()
+    {
+
+      for(var i = 0;i<= 1;i++)
+      {
+        so[i].emit('lottery',{bet:9,lines:9});
+      }
+
+    setTimeout("showTime()", 500 );
+
+    }
+    showTime();
+    </script>   
+  </body>  
+</html> 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>  
+<html>
+  <meta charset="UTF-8">
+  <title>Robet</title>
+  </head>
+  <body>  
+    <script src="socket.io.js"></script>   
+    <script>
+    // for (var i = 1;i<= 1;i++)
+    // {
+      
+    //   // 当服务端发送一条消息到客户端，message 事件即被触发。我们把消息在控制台打印出来   
+    //           //接收连接服务器信息
+    var freeCount5 = 0;
+    var freeCount8 = 0;
+    var freeCount15 = 0;
+    var Total = 0;
+    var lotteryTotal = 0;
+    var socket;
+    socket = io.connect('http://localhost:3000');
+
+    socket.on('connected',function(msg){
+        console.log(msg);
+    })
+
+    //接收登录结果
+    socket.on('loginResult',function(result){
+         console.log(result)
+         document.getElementById("score").value = result.Obj.score
+         document.getElementById("freeCount").value = result.Obj.freeCount
+    })
+
+    socket.on('lotteryResult',function(result){
+        //console.log(result)
+        
+        ++lotteryTotal;
+        Total += result.ResultData.winscore;
+
+        document.getElementById("lotteryTotal").value = lotteryTotal;
+        document.getElementById("Total").value = Total;
+
+        var string = "剩下金额:" + result.ResultData.userscore + "\n" +
+        "赢得金额:" + result.ResultData.winscore + "\n" +
+        "获得免费次数:" + result.ResultData.winfreeCount;
+
+        if (result.ResultData.winfreeCount == 5){
+          ++freeCount5;
+        }else if(result.ResultData.winfreeCount == 8){
+          ++freeCount8;
+        }else if(result.ResultData.winfreeCount == 15){
+          ++freeCount15;
+        }
+
+        document.getElementById("freeCount5").value = freeCount5;
+        document.getElementById("freeCount8").value = freeCount8;
+        document.getElementById("freeCount15").value = freeCount15;
+
+        document.getElementById("lotteryResult").innerText = string;
+
+        document.getElementById("score").value = result.ResultData.userscore
+        document.getElementById("freeCount").value = result.ResultData.freeCount
+
+        document.getElementById("score_pool").value = result.ResultData.score_pool;
+        //console.log("score:" + result.userscore);
+        //console.log(result.viewarray);
+    })
+
+    //     //发送摇奖设置
+    //      socket.emit('lottery',{bet:1,lines:1});
+        
+    //     //接收摇奖结果
+    //     
+    //  }
+     
+     function login(){
+        //发送登录帐号密码
+        socket.emit('login',{userName:'abc111',sign:'235a189a223c898adaf1c27d18456e12'})
+     }
+
+     function lottery() {
+        var lotteryCount = document.getElementById("lotteryCount").value;
+        var lotterybet = document.getElementById("lotterybet").value;
+        for(var i = 0; i < lotteryCount ; ++i){
+          Total -= lotterybet;
+          socket.emit('lottery',{bet:lotterybet,lines:1});
+        }
+        
+     }
+
+    </script>
+
+    剩余金额:<input type="text" id="score" value=0 />
+    剩余免费次数:<input type="text" id="freeCount" value=0 />
+    <br>
+    <br>
+    <input type="button" onclick="login()" value="登录" />
+    <input type="button" onclick="lottery()" value="摇奖" />
+    <input type="text" id="lotteryCount" value=1 size="3"/>
+    <input type="text" id="lotterybet" value=1 size="3"/>
+    <br>
+    <br>
+    <textarea id="lotteryResult" rows="3" cols="40">
+      摇奖结果
+    </textarea>
+
+    <br>
+    <br>
+    奖池:<input type="text" id="score_pool" value=0 />
+
+    <input type="text" id="freeCount5" value=0 size="1"/>
+    <input type="text" id="freeCount8" value=0 size="1"/>
+    <input type="text" id="freeCount15" value=0 size="1"/>
+
+    <br>
+    <br>
+    摇奖次数:<input type="text" id="lotteryTotal" value=0 size="3"/>
+    盈利:<input type="text" id="Total" value=0 size="3"/>
+
+  </body>
+</html> 

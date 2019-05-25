@@ -1,0 +1,45 @@
+@echo off
+%1(start /min cmd.exe /c %0 :&exit)
+start cmd /k "cd server&&node app"  
+choice /t 3 /d y /n >nul
+start cmd /k "cd 8da2server&&title 8da2_1&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd 8da2server/5&&title 8da2_5&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd 8da2server/10&&title 8da2_10&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd 8da2server/20&&title 8da2_20&&node app"
+choice /t 1 /d y /n >nul
+start cmd /k "cd 28server&&title 28game_1&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd 28server/5&&title 28game_5&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd 28server/10&&title 28game_10&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd 28server/20&&title 28game_20&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd cowserver_jindian&&title jindian_1&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd cowserver_jindian/5&&title jindian_5&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd cowserver_jindian/10&&title jindian_10&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd cowserver_jindian/20&&title jindian_20&&node app"
+choice /t 1 /d y /n >nul
+start cmd /k "cd cowserver_qianzhuang&&title qiang_1&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd cowserver_qianzhuang/5&&title qiang_5&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd cowserver_qianzhuang/10&&title qiang_10&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd cowserver_qianzhuang/20&&title qiang_20&&node app"
+choice /t 1 /d y /n >nul
+start cmd /k "cd fishserver/10&&title fish_1&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd fishserver/50&&title fish_5&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd fishserver/100&&title fish_50&&node app"  
+choice /t 1 /d y /n >nul
+start cmd /k "cd fishserver/500&&title fish_100&&node app"
+choice /t 1 /d y /n >nul
+start cmd /k "cd tigerserver2&&title tiger&&node app"

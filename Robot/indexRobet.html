@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>  
+<html>
+  <meta charset="UTF-8">
+  <title>Robet</title>
+  </head>
+  <body>  
+    <script src="socket.io.js"></script>
+    <script type="text/javascript" src="FishMatchUser.js"></script>
+    <script type="text/javascript" src="FishUser.js"></script>
+    <script type="text/javascript" src="game28User.js"></script>
+    <script type="text/javascript" src="redbagUser.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="jia82User.js"></script>
+    <script type="text/javascript" src="cowUser.js"></script>
+    <script type="text/javascript" src="qiangcowUser.js"></script>
+    <script type="text/javascript" src="jingdiancowUser.js"></script>
+    <script type="text/javascript" src="landlordUser.js"></script>
+    <script>
+    var main = GameInfo.getInstand;
+
+    function go(){
+        var info = {};
+        info.FishRobot = parseInt(document.getElementById("FishRobot").value);
+        info.FishMatchRobotMin = parseInt(document.getElementById("FishMatchRobotMin").value);
+        info.FishMatchRobotMax = parseInt(document.getElementById("FishMatchRobotMax").value);
+        info.game28RobotMin = parseInt(document.getElementById("game28RobotMin").value);
+        info.game28RobotMax = parseInt(document.getElementById("game28RobotMax").value);
+        info.redbagRobotMin = parseInt(document.getElementById("redbagRobotMin").value);
+        info.redbagRobotMax = parseInt(document.getElementById("redbagRobotMax").value);
+        info.jia82RobotMin = parseInt(document.getElementById("jia82RobotMin").value);
+        info.jia82RobotMax = parseInt(document.getElementById("jia82RobotMax").value);
+        info.cowRobotMin = parseInt(document.getElementById("cowRobotMin").value);
+        info.cowRobotMax = parseInt(document.getElementById("cowRobotMax").value);
+        info.qiangcowRobotMin = parseInt(document.getElementById("qiangcowRobotMin").value);
+        info.qiangcowRobotMax = parseInt(document.getElementById("qiangcowRobotMax").value);
+        info.jingdiancowRobotMin = parseInt(document.getElementById("jingdiancowRobotMin").value);
+        info.jingdiancowRobotMax = parseInt(document.getElementById("jingdiancowRobotMax").value);
+        info.landlordRobotMin = parseInt(document.getElementById("landlordRobotMin").value);
+        info.landlordRobotMax = parseInt(document.getElementById("landlordRobotMax").value);
+        main.timetest(info);
+    }
+
+    </script>
+    
+
+    <h3>普通房间设置</h3>
+    普通 max(默认20)<input type="text" id="FishRobot" value=12 size="1"/>
+    <br>
+    <br>
+    <h3>比赛房间设置</h3>
+    比赛min(默认10)<input type="text" id="FishMatchRobotMin" value=0 size="1"/>
+    <br>
+    比赛max(默认20)<input type="text" id="FishMatchRobotMax" value=0 size="1"/>
+    <br>
+
+    <br>
+    <h3>28游戏设置</h3>
+    28游戏min(默认8)<input type="text" id="game28RobotMin" value=30 size="1"/>
+    28游戏max(默认15)<input type="text" id="game28RobotMax" value=50 size="1"/>
+    <br>
+
+    <br>
+    <h3>红包游戏设置</h3>
+    红包游戏min(默认14)<input type="text" id="redbagRobotMin" value=0 size="1"/>
+    红包游戏max(默认15)<input type="text" id="redbagRobotMax" value=0 size="1"/>
+    <br>
+
+    <br>
+    <h3>八加二游戏设置</h3>
+    游戏min(默认8)<input type="text" id="jia82RobotMin" value=30 size="1"/>
+    游戏max(默认15)<input type="text" id="jia82RobotMax" value=50 size="1"/>
+    <br>
+
+    <br>
+    <h3>牛牛s游戏设置</h3>
+    游戏min(默认8)<input type="text" id="cowRobotMin" value=0 size="1"/>
+    游戏max(默认15)<input type="text" id="cowRobotMax" value=0 size="1"/>
+    <br>
+
+    <br>
+    <h3>抢庄牛牛游戏设置</h3>
+    游戏min(默认8)<input type="text" id="qiangcowRobotMin" value=20 size="1"/>
+    游戏max(默认15)<input type="text" id="qiangcowRobotMax" value=30 size="1"/>
+    <br>
+
+    <br>
+    <h3>经典牛牛游戏设置</h3>
+    游戏min(默认8)<input type="text" id="jingdiancowRobotMin" value=20 size="1"/>
+    游戏max(默认15)<input type="text" id="jingdiancowRobotMax" value=30 size="1"/>
+    <br>
+
+    <br>
+    <h3>斗地主游戏设置</h3>
+    游戏min(默认2)<input type="text" id="landlordRobotMin" value=2 size="1"/>
+    游戏max(默认2)<input type="text" id="landlordRobotMax" value=2 size="1"/>
+    <br>
+    <input type="button" onclick="go()" value="进入房间" />
+  </body>
+</html> 

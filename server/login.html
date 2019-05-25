@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="http://localhost:3000/weixinLogin" method="get">
+			<input type="text"name="act" value=""/ id="act">
+			<input type="text" name="time" value="" id="time"/>
+			<input type="text" name="daili" value="" id="daili"/>
+			<input type="text" style="display: none;" id="sign" name="sign"/>
+			<input type="submit" value="获取"/ id="submit" onclick="ing()">
+		<!--</form>-->
+	</body>
+</html>
+<script type="text/javascript" src="static/js/jquery-3.1.1.min.js" ></script>
+<script type="text/javascript" src="md5.js" ></script>
+<script>
+		var newDate = new Date();  
+	        //在小于10的月份前补0  
+	    var month = eval(newDate.getMonth() + 1) < 10 ? '0'+eval(newDate.getMonth() + 1) : eval(newDate.getMonth() + 1);  
+	    //在小于10的日期前补0  
+	    var day = newDate.getDate() < 10 ? '0' + newDate.getDate() : newDate.getDate();  
+	        //在小于10的小时前补0  
+	    var hours = newDate.getHours() < 10 ? '0' + newDate.getHours() : newDate.getHours();  
+	        //在小于10的分钟前补0  
+	    var minutes = newDate.getMinutes() < 10 ? '0' + newDate.getMinutes() : newDate.getMinutes();  
+	        //在小于10的秒数前补0  
+	    var seconds = newDate.getSeconds() < 10 ? '0' + newDate.getSeconds(): newDate.getSeconds();  
+	        //拼接时间  
+	    var stringDate = newDate.getFullYear() + '-' + month + '-' + day + " " + hours + ":" + minutes + ":" + seconds; 
+		var h = stringDate.replace(/\s+/g,"");
+		var m = h.replace(/\-/g,"");
+		var s = m.replace(/\:/g,"");
+		
+		var key = "42dfcb34fb02d8cd";
+		function ing(){
+			document.getElementById('act').value="getGuessA";
+			var act=document.getElementById('act').value;
+			document.getElementById('time').value=s;
+			var times = document.getElementById('time').value=s;
+			document.getElementById('daili').value="showking";
+			var daili=document.getElementById('daili').value;
+			document.getElementById('sign').value=hex_md5(act+daili+times+key);
+		}
+		
+</script>

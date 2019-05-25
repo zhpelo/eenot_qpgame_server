@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en">
+<head>
+    <title>Nivo Slider Demo</title>
+    <link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+</head>
+<body style="BACKGROUND-COLOR:#000000;">
+    <table>
+        <div id="wrapper">
+            <div class="slider-wrapper theme-default">
+                <div class="ribbon"></div>
+                <div id="slider" class="nivoSlider">
+                    <img src="images/banner1.jpg" alt="" title="" />
+                    <img src="images/banner2.jpg" alt="" title="" />
+                    <img src="images/banner3.jpg" alt="" data-transition="sliceDown" title="" />
+                    <img src="images/banner4.jpg" alt="" title="" />
+                </div>
+            </div>
+
+        </div>
+        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $('#slider').nivoSlider({ pauseTime: 3000 });
+            });
+        </script>
+        <div><img src="images/02.jpg"/></div>
+</table>
+</body>
+
+</html>

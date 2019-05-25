@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="doudizhu" value="斗地主" onclick="filler()">
+		<input type="button" value="进入房间" onclick="loginroom()" />
+		<input type="button" name="" value="离开房间" onclick="logoutroom()"/>
+		<input type="button" value="抢地主" onclick="qiangdizhu()" id="qiang" style="display: none;"/>
+		<input type="button"value="不抢" onclick="bqiangdizhu()"/>
+		<input type="button"value="发送准备信hao" onclick="csend()"/>
+		<input type="button"value="出牌" onclick="carcd()" />
+		<input type="button" value="断线重连" onclick="messg()"/>
+		<input type="button" value="结算"onclick="jiesuan()" />
+		<div class="nimabi"></div>
+	</body>
+</html>
+<script src="jquery-3.1.1.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	var socket = io.connect('http://localhost:13000');
+	
+	socket.emit('login',{userName:'abc111',sign:'44129d28f28e55b1a8aaf22c3c324a19',gameId:1});
+	
+	socket.on('connected',function(data){
+		console.log("========connected==========")
+		console.log(data)
+		
+	})
+	
+	var sign = "";
+    var userid = "";
+    var bulletid = 1;
+	
+	socket.on('loginResult',function(result){
+		console.log("=========登陆状态的结果=========")
+        console.log(result)
+        userid = result.Obj.id;
+        sign = result.Obj.sign;
+        logingame();
+    })
+	
+	var ip=[];
+	var prot=[];
+	
+    
+	socket.on('ServerListResult',function(msg){
+		console.log("-------------登陆服务器返回的游戏服务器各项属性---------------")
+        console.log(msg);
+        
+        for(var i = 0 ;i < msg.GameInfo.length ; i++){
+            ip[i] = msg.GameInfo[i].serverInfo.normal[0].ip;
+            prot[i] = msg.GameInfo[i].serverInfo.normal[0].prot;
+        }
+
+    })
+	
+	
+	
+
+   function loginroom(){
+        socket2.emit('LoginRoom',JSON.stringify({roomid:1}))
+     }
+	
+	
+	function logingame(){
+        if (socket2 && userid){
+            socket2.emit('LoginGame',JSON.stringify({userid:userid,gametype:1,sign:sign}))
+        }
+     }
+	
+	var socket2;
+	var _userid;
+	var tablelist;
+    var initSocket = function(){
+      socket2.on('connected',function(msg){
+        console.log(msg);
+      })
+
+      socket2.on('loginGameResult',function(msg){
+      	console.log("登陆房间")
+        console.log(msg);
+		_userid=msg;
+        socket2.emit('LoginRoom',{roomid:1})
+        //结束与登录服务器通信
+        //socket.disconnect();
+      })
+      
+      socket2.on('playEnter',function(data){
+		console.log(data)
+		 $('.nimabi').append("<li>"+data.ResultData.seatId+"</li>")
+	})
+		
+	  socket2.on('LoginRoomResult',function(msg){
+	    console.log(msg);
+	    tablelist=msg;
+	       $('.nimabi').append("<li>"+msg.ResultData.seatId+"</li>")
+	    })	
+	  socket2.on('sendCard',function(carcd){
+	  	console.log(carcd);
+	  })
+	  socket2.on("publicCarcd",function(carcd){
+	  	console.log(carcd);
+	  })
+	  socket2.on('sendCardsArr',function(data){
+	    	console.log(data)
+	    })
+	  socket2.on('Landlord',function(dou){
+	  	console.log(dou)
+	  	if(dou.userId==_userid.Obj.id){
+	    	$('#qiang').css('display','block')
+	    }
+	  })
+	  socket2.on('Hudshow',function(data){
+	  	console.log("桌子所有人的信息")
+	  	console.log(data);
+	  })
+	  socket2.on('boom',function(data){
+	    	console.log(data);
+	    })
+	  socket2.on('Gaga',function(gaga){
+	  		console.log('Gaga')
+	  		if(gaga.userid==_userid.Obj.id){
+	    		$('#qiang').css('display','block');
+	    	}
+	    	console.log(gaga);
+	    })
+	    socket2.on('bold',function(bold){
+	    	console.log('bold')
+	    	console.log(bold)
+	    })
+	     socket2.on('mm',function(data){
+	    	console.log("mm");
+	    	console.log(data)
+	    })
+	    socket2.on('mmp',function(mmp){
+	    	console.log("mmp");
+	    	console.log(mmp)
+	    })
+	    socket2.on('readgo',function(data){
+	    	console.log(data)
+	    })
+	    socket2.on('Landlord_Poker',function(data){
+	    	console.log(data)
+	    })
+	    socket2.on('regression',function(data){
+	    	console.log(data)
+	    })
+    }
+	function csend(){
+		
+		socket2.emit('loadedFinish',{playerId:_userid.Obj.id,tableId:tablelist.ResultData.tableId,seatId:tablelist.ResultData.seatId,ready:0})
+	}
+
+	function qiangdizhu(){
+		console.log(_userid.Obj);
+		socket2.emit("qiang",{playerId:_userid.Obj.id,qiang:1,tableId:tablelist.ResultData.tableId,seatId:tablelist.ResultData.seatId});
+		$('#qiang').css('display','none')
+//		$('#qiang').attr('disabled',true)
+	}
+	
+	function bqiangdizhu(){
+		console.log(_userid.Obj);
+		socket2.emit("qiang",{playerId:_userid.Obj.id,qiang:0,tableId:tablelist.ResultData.tableId,seatId:tablelist.ResultData.seatId});
+		$('#qiang').css('display','none')
+//		$('#qiang').attr('disabled',true)
+	}
+	var nbv=[{val:8,type:1},{val:8,type:1},{val:8,type:2},{val:7,type:1},{val:7,type:1},{val:7,type:1},{val:6,type:1},{val:6,type:1},{val:6,type:1},{val:4,type:1},{val:4,type:1},{val:3,type:1}]
+	function carcd(){
+		socket2.emit('sendCardsArr',{array:nbv,userId:_userid.Obj.id,tableId:tablelist.ResultData.tableId,seatId:tablelist.ResultData.seatId})
+	}
+	
+	function messg(){
+		console.log(tablelist.ResultData.tableId,tablelist.ResultData.seatId,_userid.Obj.id)
+		socket2.emit('joinTableroom',{tableId:tablelist.ResultData.tableId,seatId:tablelist.ResultData.seatId,userId:_userid.Obj.id})
+	}
+	function jiesuan(){
+		socket2.emit('finishGame',{tableId:tablelist.ResultData.tableId,seatId:tablelist.ResultData.seatId,userId:_userid.Obj.id,finish:1,isLandload:1})
+	}
+	//离开房间
+	function logoutroom(){
+		socket2.disconnect();
+	}
+	
+	//斗地主入口；
+	function filler(){
+		socket2 = io.connect('http://' + ip[9] + ':' + prot[9])
+		initSocket();
+		logingame();
+	}
+</script>

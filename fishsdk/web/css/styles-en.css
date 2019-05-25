@@ -1,0 +1,149 @@
+
+@charset "UTF-8";
+
+/*********************LoginForm****************************************/
+.form_nologin{
+	float:right; width:385px; 
+}
+
+a.textforgot{ float:right; padding:7px 0 0 5px; margin-right:15px; color:#000;}
+a:hover.textforgot{ color:#f6ff00;}
+.form_nologin .detail{}
+
+.form_nologin .detail .username{ 
+	width:120px; height:20px; border:1px solid #036a6e; float:left;
+	background-color:#fff; float:left; margin-right:5px; color:#898b73; 
+	vertical-align:middle;  font-family:Arial, Helvetica, sans-serif; font-size:11px; 
+	padding-left:2px;
+} 
+
+.form_nologin .detail .password{
+	width:120px; height:20px; border:1px solid #036a6e;  float:left;
+	background-color:#fff; float:left; margin-right:5px;  color:#898b73; 
+	vertical-align:middle; font-family:Arial, Helvetica, sans-serif; font-size:11px; 
+	padding-left:2px;
+}
+
+.form_nologin .detail .capcha{ 
+	width:53px; height:20px; border:1px solid #036a6e;  float:left;
+	background-color:#fff; float:left; color:#898b73; vertical-align:middle;  
+	font-family:Arial, Helvetica, sans-serif; font-size:11px; padding-left:2px; 
+	margin:0px 5px 0 0;
+} 
+
+.capchaimage{
+	width:53px; height:20px; border:1px solid #036a6e; margin:0px 0 0 0; float:left;
+}
+
+
+
+a.login_button{ 
+	float:right; width:56px; height:24px; padding:3px 0 0 0; text-align:center; 
+	font-size:11px; color:#FFFFFF; font-family:Arial, Helvetica, sans-serif;
+	background:url(../images/cut_images_png.png) no-repeat; font-weight:bold;
+	background-position:-75px -3px; 
+}
+
+a:hover.login_button{
+	background-position:-75px -33px; color:#000000;
+}
+
+/*********************Menu****************************************/
+
+
+.caption-bold {
+	font-family: Arial;
+	font-size: 11px;
+	font-style: normal;
+
+	font-variant: normal;
+	color: #111;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.caption {
+	font-family: Arial;
+	font-size: 11px;
+	font-style: normal;
+
+	font-variant: normal;
+	color: #111;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+
+.header {
+	font-family: Arial;
+	font-size: 21px;
+	font-style: normal;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+	font-variant: normal;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+.header2 {
+	font-family: Arial;
+	font-size: 16px;
+	font-style: normal;
+
+	font-variant: normal;
+	color: #FF0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+.content {
+	font-family: Arial;
+	font-size: 14px;
+	font-style: normal;
+
+	font-variant: normal;
+	color: #111;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+
+.class1 A:link {
+	font-family: Arial;
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.class1 A:visited {
+	font-family: Arial;
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+
+.class1 A:hover {
+	font-family: Arial;
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+	color: #fff200;
+	text-decoration: none;
+	font-weight: bold;
+	    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+

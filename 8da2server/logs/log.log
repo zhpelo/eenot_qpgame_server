@@ -1,0 +1,103 @@
+[2017-03-30 09:35:14.270] [INFO] logInfo - 测试日志信息
+[2017-03-30 09:48:10.391] [ERROR] [default] - Cheese is too ripe!
+[2017-03-30 09:48:10.409] [FATAL] [default] - Cheese was breeding ground for listeria.
+[2017-03-30 09:48:51.864] [WARN] [default] - Cheese is quite smelly.
+[2017-03-30 09:48:51.884] [ERROR] [default] - Cheese is too ripe!
+[2017-03-30 09:48:51.891] [FATAL] [default] - Cheese was breeding ground for listeria.
+[2017-03-30 09:49:20.899] [INFO] [default] - cheese is gouda.
+[2017-03-30 09:49:20.919] [ERROR] [default] - Cheese is too ripe!
+[2017-03-30 09:49:20.927] [FATAL] [default] - Cheese was breeding ground for listeria.
+[2017-06-13 18:11:54.313] [INFO] [default] - 登录服务器传来userId:3 score:10000
+[2017-06-13 18:11:54.327] [WARN] [default] - LoginRoom-json
+[2017-06-13 18:11:54.321] [INFO] [default] - 更新后userId:3 score:10000
+[2017-06-13 18:11:58.906] [INFO] [default] - 用户离开!userid:3 Account:test score:10000
+[2017-06-13 18:12:02.698] [INFO] [default] - 登录服务器传来userId:3 score:10000
+[2017-06-13 18:12:02.699] [INFO] [default] - 更新后userId:3 score:10000
+[2017-06-13 18:12:02.716] [WARN] [default] - LoginRoom-json
+[2017-06-13 18:12:21.264] [WARN] [default] - downCoin-json
+[2017-06-13 18:12:22.305] [WARN] [default] - downCoin-json
+[2017-06-13 18:12:22.714] [WARN] [default] - downCoin-json
+[2017-06-13 18:12:23.550] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:27.843] [INFO] [default] - 登录服务器传来userId:1 score:100000
+[2017-06-13 18:13:27.845] [INFO] [default] - 更新后userId:1 score:100000
+[2017-06-13 18:13:27.851] [WARN] [default] - LoginRoom-json
+[2017-06-13 18:13:28.994] [WARN] [default] - up-json
+[2017-06-13 18:13:33.528] [INFO] [default] - 用户离开!userid:3 Account:test score:10000
+[2017-06-13 18:13:34.554] [INFO] [default] - 桌子0洗牌完毕!
+[2017-06-13 18:13:40.158] [INFO] [default] - 登录服务器传来userId:3 score:10000
+[2017-06-13 18:13:40.163] [INFO] [default] - 更新后userId:3 score:10000
+[2017-06-13 18:13:40.172] [WARN] [default] - LoginRoom-json
+[2017-06-13 18:13:42.163] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:43.392] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:43.824] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:44.058] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:44.420] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:44.695] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:45.260] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:45.652] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:45.824] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:45.988] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:45.990] [INFO] [default] - 3超出单局下注
+[2017-06-13 18:13:46.319] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:46.323] [INFO] [default] - 3超出单局下注
+[2017-06-13 18:13:46.507] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:46.510] [INFO] [default] - 3超出单局下注
+[2017-06-13 18:13:48.736] [WARN] [default] - downCoin-json
+[2017-06-13 18:13:48.738] [INFO] [default] - 3超出单局下注
+[2017-06-13 18:17:02.502] [INFO] [default] - 用户离开!userid:3 Account:test score:18910
+[2017-06-15 18:09:32.494] [INFO] [default] - 登录服务器传来userId:3017 score:100000
+[2017-06-15 18:09:32.503] [INFO] [default] - 更新后userId:3017 score:100000
+[2017-06-15 18:10:35.617] [INFO] [default] - 登录服务器传来userId:1 score:33600
+[2017-06-15 18:10:35.620] [INFO] [default] - 更新后userId:1 score:33600
+[2017-06-15 18:10:35.651] [WARN] [default] - LoginRoom-json
+[2017-06-15 18:10:39.648] [WARN] [default] - up-json
+[2017-06-15 18:10:50.269] [INFO] [default] - 桌子0洗牌完毕!
+[2017-06-15 18:10:59.922] [INFO] [default] - 用户离开!userid:1 Account:abc123 score:33600
+[2017-06-15 18:11:47.240] [INFO] [default] - 登录服务器传来userId:3017 score:100000
+[2017-06-15 18:11:47.243] [INFO] [default] - 更新后userId:3017 score:100000
+[2017-06-15 18:11:55.572] [INFO] [default] - 登录服务器传来userId:1 score:100000
+[2017-06-15 18:11:55.577] [INFO] [default] - 更新后userId:1 score:100000
+[2017-06-15 18:11:55.594] [WARN] [default] - LoginRoom-json
+[2017-06-15 18:11:57.451] [WARN] [default] - up-json
+[2017-06-15 18:12:42.227] [INFO] [default] - 用户离开!userid:1 Account:abc123 score:100000
+[2017-06-15 18:12:46.141] [WARN] [default] - LoginRoom-json
+[2017-06-15 18:12:47.085] [WARN] [default] - up-json
+[2017-06-15 18:12:56.674] [INFO] [default] - 登录服务器传来userId:3017 score:100000
+[2017-06-15 18:12:56.675] [INFO] [default] - 更新后userId:3017 score:100000
+[2017-06-15 18:14:34.696] [INFO] [default] - 登录服务器传来userId:3017 score:100000
+[2017-06-15 18:14:34.700] [INFO] [default] - 更新后userId:3017 score:100000
+[2017-06-15 18:14:52.624] [INFO] [default] - 登录服务器传来userId:3017 score:100000
+[2017-06-15 18:14:52.628] [INFO] [default] - 更新后userId:3017 score:100000
+[2017-06-15 18:14:59.229] [INFO] [default] - 登录服务器传来userId:1 score:100000
+[2017-06-15 18:14:59.231] [INFO] [default] - 更新后userId:1 score:100000
+[2017-06-15 18:14:59.244] [WARN] [default] - LoginRoom-json
+[2017-06-15 18:15:00.679] [WARN] [default] - up-json
+[2017-06-15 18:15:06.020] [INFO] [default] - 桌子0洗牌完毕!
+[2017-06-15 18:15:45.258] [INFO] [default] - 登录服务器传来userId:3017 score:98400
+[2017-06-15 18:15:45.261] [INFO] [default] - 更新后userId:3017 score:98400
+[2017-06-15 19:16:34.971] [INFO] [default] - 登录服务器传来userId:3017 score:98400
+[2017-06-15 19:16:34.981] [INFO] [default] - 更新后userId:3017 score:98400
+[2017-06-15 19:16:38.598] [INFO] [default] - 用户离开!userid:3017 Account:bosen2017061517240702 score:98400
+[2017-06-15 19:16:40.952] [INFO] [default] - 登录服务器传来userId:3017 score:98400
+[2017-06-15 19:16:40.954] [INFO] [default] - 更新后userId:3017 score:98400
+[2017-06-15 19:16:44.082] [INFO] [default] - 用户离开!userid:3017 Account:bosen2017061517240702 score:98400
+[2017-06-15 19:19:00.110] [INFO] [default] - 登录服务器传来userId:3017 score:98400
+[2017-06-15 19:19:00.115] [INFO] [default] - 更新后userId:3017 score:98400
+[2017-06-15 19:19:02.153] [INFO] [default] - 用户离开!userid:3017 Account:bosen2017061517240702 score:98400
+[2017-06-15 19:19:04.354] [INFO] [default] - 登录服务器传来userId:3017 score:98400
+[2017-06-15 19:19:04.358] [INFO] [default] - 更新后userId:3017 score:98400
+[2017-06-15 19:19:27.553] [INFO] [default] - 登录服务器传来userId:3017 score:98400
+[2017-06-15 19:19:27.557] [INFO] [default] - 更新后userId:3017 score:98400
+[2017-06-15 19:19:29.227] [INFO] [default] - 用户离开!userid:3017 Account:bosen2017061517240702 score:98400
+[2017-06-15 19:19:31.469] [INFO] [default] - 登录服务器传来userId:3017 score:98400
+[2017-06-15 19:19:31.471] [INFO] [default] - 更新后userId:3017 score:98400
+[2017-06-15 19:19:34.262] [INFO] [default] - 用户离开!userid:3017 Account:bosen2017061517240702 score:98400
+[2017-06-27 17:36:28.423] [INFO] [default] - 登录服务器传来userId:951 score:50000
+[2017-06-27 17:36:28.430] [INFO] [default] - 更新后userId:951 score:50000
+[2017-06-27 17:36:32.384] [INFO] [default] - 登录服务器传来userId:1524 score:50000
+[2017-06-27 17:36:32.385] [INFO] [default] - 更新后userId:1524 score:50000
+[2017-06-27 17:36:36.378] [INFO] [default] - 登录服务器传来userId:864 score:50000
+[2017-06-27 17:36:36.380] [INFO] [default] - 更新后userId:864 score:50000
+[2017-06-27 17:36:47.671] [INFO] [default] - 用户离开!userid:1524 Account:robot947 score:50000
+[2017-06-27 17:36:47.678] [INFO] [default] - 用户离开!userid:951 Account:robot374 score:50000
+[2017-06-27 17:36:47.681] [INFO] [default] - 用户离开!userid:864 Account:robot287 score:50000
