@@ -27,7 +27,7 @@ app.set('port', process.env.PORT || 3104);
 新的端口
 3.在登录服务器里serverInfo.js 加上对应的
 
-`
+```
 var serverRoom2 = {};
 
 serverRoom2.Server = 2;
@@ -45,8 +45,7 @@ serverRoom2.prot = "3104";
 serverGame1.serverInfo.push(serverRoom2);
 
 GameConfig.push(serverGame1);
-`
-		    
+```
 
 4.修改倍数
 gameConfig.js
