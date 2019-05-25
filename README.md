@@ -1,8 +1,11 @@
 # 外星人棋牌-服务端源码
 
 #### 介绍
-    大家好，我外星人源码网的站长，这是第一次在码云上分享棋牌源码，此套棋牌游戏源码包含抢庄牛牛，捕鱼，斗地主，连线机，经典牛牛，八搭二，二八杠等。玩法多种多样是可以正常上线运营的源码！ 这是后端使用 nodejs  前端使用cocos2d-js开发的一套H5的游戏代码， coco2d-js也可以生成安卓和ios客户端，对这套代码感兴趣的小伙伴们 star 一下吧！！
-    本源码来自外星人源码网 - [http://www.eenot.com](http://www.eenot.com)
+大家好，我外星人源码网的站长，这是第一次在码云上分享棋牌源码，此套棋牌游戏源码包含 **抢庄牛牛，捕鱼，斗地主，连线机，经典牛牛，八搭二，二八杠** 等。玩法多种多样是可以正常上线运营的源码！ 这是后端使用 nodejs  前端使用cocos2d-js开发的一套H5的游戏代码， coco2d-js也可以生成安卓和ios客户端，对这套代码感兴趣的小伙伴们 star 一下吧！！
+
+客户端代码在这里：[https://gitee.com/eenot/eenot_qpgame_client](https://gitee.com/eenot/eenot_qpgame_client)
+
+本源码来自外星人源码网 - [http://www.eenot.com](http://www.eenot.com)
 
 #### 运行截图
 ![来自外星人源码网](https://images.gitee.com/uploads/images/2019/0525/105537_71b544c7_375279.png "2.png")
