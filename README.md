@@ -4,34 +4,23 @@
 本源码来自外星人源码网 - www.eenot.com
 
 #### 软件架构
-软件架构说明
+
+H5源码电玩城 1:1真钱H5捕鱼棋牌游戏源码下载
+
+H5源码电玩棋牌游戏(可运营)需要自己接一下支付接口，此版本为WIN版。
+H5源码电玩版带抢庄牛牛，捕鱼，斗地主，连线机，经典牛牛，八搭二，二八杠，带机器人。
+
+内带修改文档。画面精美，简单易搭建，内带环境安装包。可以XJ模式哦。如果不要，可以直接屏蔽掉。
+
+H5源码1:1真钱捕鱼棋牌游戏源码下载
+此套H5源码程序完整 PHP开发 为H5版本 无需客户端 使用cocos-js开发
+
+亲测可用，大家赶快来下载呀！！！！
+只要架设好直接在手机里面打开就可以玩了 难能可贵的还是H5源码真钱版本 而且还是多款游戏合集
 
 
-#### 安装教程
-
-1. xxxx
-2. xxxx
-3. xxxx
 
 #### 使用说明
 
-1. xxxx
-2. xxxx
-3. xxxx
+本源码来自外星人源码网 如果在安装和架设中遇到任何问题可以加我们的QQ群交流  QQ群号：873931886
 
-#### 参与贡献
-
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
