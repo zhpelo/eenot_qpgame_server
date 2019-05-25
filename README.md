@@ -26,15 +26,24 @@ app.set('port', process.env.PORT || 3104);
 
 新的端口
 3.在登录服务器里serverInfo.js 加上对应的
+
 `
 var serverRoom2 = {};
+
 serverRoom2.Server = 2;
+
 serverRoom2.bet = 5;
+
 serverRoom2.entryCoin = 500;
+
 serverRoom2.gift = 0;
+
 serverRoom2.ip = "127.0.0.1";
-serverRoom2.prot = "3104";		
+
+serverRoom2.prot = "3104";	
+	
 serverGame1.serverInfo.push(serverRoom2);
+
 GameConfig.push(serverGame1);
 `
 		    
